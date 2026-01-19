@@ -6,7 +6,8 @@ import { Certs365 } from "../src/Certs365.sol";
 import { Usdc } from "../src/Usdc.sol";
 import { INonfungiblePositionManager } from "../src/interfaces/INonfungiblePositionManager.sol";
 import { Constants } from "./constants/Constants.sol";
-import { Utils } from "./utils/lib.sol";
+import { UniswapV3PriceMath } from "./utils/UniswapV3PriceMath.sol";
+
 
 contract DeployV3 is Script {
     function run() external {
@@ -19,7 +20,7 @@ contract DeployV3 is Script {
         Usdc usdc = new Usdc();
 
         // 3️⃣ Mint USDC to deployer
-        usdc.mint(msg.sender, Constants.USDC_LP_AMOUNT);
+        usdc.mint(msg.sender, Constants.USDC_LP_AMOUNT*100);
 
         // 4️⃣ Approvals
         certs.approve(Constants.POSITION_MANAGER, type(uint256).max);
@@ -35,14 +36,14 @@ contract DeployV3 is Script {
             INonfungiblePositionManager(Constants.POSITION_MANAGER);
 
         // 6️⃣ Initialize pool at $0.10 per CERTS
-        // Price = USDC / CERTS = 5000 / 50000 = 0.10
-        // priceRaw = 0.10 * 10^6 / 10^18
-        // sqrtPriceX96 = sqrt(priceRaw) * 2^96
-        uint256 price = 100_000; // 0.10 * 1e6
-        uint256 numerator = price << 192; // price * 2^192
-        uint256 denominator = 1e18;       // CERTS decimals
-        uint160 sqrtPriceX96 = uint160(
-            Utils.sqrt(numerator / denominator)
+        // sqrtPriceX96 = sqrt( (amount1 / amount0) ) * 2^96
+        bool certsIsToken0 = token0 == address(certs);
+        uint160 sqrtPriceX96 =
+            UniswapV3PriceMath.computeSqrtPriceX96(
+            certsIsToken0,
+            Constants.PRICE_USDC_PER_CERTS,
+            Constants.CERTS_DECIMALS,
+            Constants.USDC_DECIMALS
         );
         // uint160 sqrtPriceX96 = 250541448375047931186413801569; // precomputed for 0.10
 

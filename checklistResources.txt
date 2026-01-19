@@ -1,1 +1,24 @@
-3 ) https://info.polygonscan.com/what-is-verify-address-ownership/
+-> https://info.polygonscan.com/what-is-verify-address-ownership/
+
+-> To Update Logo info on etherscan -  https://www.youtube.com/watch?v=GBeORXtJnm8
+    Coinmarket cap - https://tokpie.io/blog/list-token-coinmarketcap-cmc-fast/
+        -  your markets must show real activity, with at least around 50,000 dollars in honest daily trading volume
+    uniswap - https://tokpie.io/blog/add-token-logo-to-uniswap-step-by-step-guide/#:~:text=Once%20your%20pull%20request%20is,token%20and%20logo%20will%20appear.
+    coingecko - https://tokpie.io/blog/list-token-coingecko-ultimate-guide/
+        - we must need to listed in any one of this ( https://www.coingecko.com/en/exchanges) to get listed on coingecko or coinmarketcap         
+
+-> we need an hosted image url , and image needs to be png with size 32*32
+
+-> Price = USD LP amount / TOKEN LP amount
+
+-> multisig wallet - https://app.safe.global/welcome/accounts
+
+-> Example deployed test net addresses 
+  CERTS token: 0x96D35Fcbc0A329b73df77F2A5d18e7B3e6e332A6
+  Usdc token: 0x3828641Db3592aF92c7d7B5E38D8C19F90A7f76b
+  LP NFT tokenId: 223089
+
+-> Pool Info - https://app.uniswap.org/explore/pools/ethereum_sepolia/0x62496c42752edFC6948Fe693b70FABE5cD79810F
+
+-> If we have have deployed with the documnet values and with full range ( 0 to infinity )
+    1 cert = 0.099699 usd

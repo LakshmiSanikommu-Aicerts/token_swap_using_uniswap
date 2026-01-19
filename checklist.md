@@ -56,7 +56,7 @@ After this step:
 
 #### Step 1: Prepare Logo
 - PNG or SVG
-- **256×256** (recommended)
+- **256×256** (recommended) // 32*32 png
 - Transparent background
 - Square format
 

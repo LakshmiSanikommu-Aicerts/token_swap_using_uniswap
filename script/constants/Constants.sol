@@ -23,11 +23,25 @@ library Constants {
 
     // ===== Certs365 =====
 
-    /// @dev Initial supply of Certs365
-    uint256 internal constant CERTS365_INITIAL_SUPPLY = 1_000_000 ether;
+    /// @dev Initial supply of Certs365 (5,000,000 CERTs)
+    uint256 internal constant CERTS365_INITIAL_SUPPLY = 5_000_000 ether;
 
 
-        // ===== Liquidity params =====
-    uint256 internal constant CERTS_LP_AMOUNT = 50_000 ether;
-    uint256 internal constant USDC_LP_AMOUNT = 5_000 * 1e6; // $5,000
+    // ===== Liquidity params =====
+    // 10% of total supply → 500,000 CERTs
+    uint256 internal constant CERTS_LP_AMOUNT = 500_000 ether;
+    // $25,000 USDC (6 decimals) → initial price = $0.10
+    uint256 internal constant USDC_LP_AMOUNT = 50_000 * 1e6;
+
+
+    // ===== Price config =====
+
+    // Target price: 1 CERTS = $0.10
+    // Expressed in USDC smallest units (6 decimals)
+    uint256 internal constant PRICE_USDC_PER_CERTS = (USDC_LP_AMOUNT * 1e18) / CERTS_LP_AMOUNT; // 0.10 * 1e6
+
+    // Token decimals
+    uint8 internal constant CERTS_DECIMALS = 18;
+    uint8 internal constant USDC_DECIMALS  = 6;
+    
 }
