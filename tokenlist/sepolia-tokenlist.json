@@ -7,7 +7,7 @@
     "patch": 0
   },
   "tags": {},
-  "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/logos/list-logo.png",
+  "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/refs/heads/main/tokenlist/logos/list-logo.png",
   "keywords": ["sepolia", "demo", "certs"],
   "tokens": [
     {
@@ -16,7 +16,7 @@
       "name": "CERTS",
       "symbol": "CERTS",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/logos/certs.png"
+      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/refs/heads/main/tokenlist/logos/certs.png"
     },
     {
       "chainId": 11155111,
@@ -24,7 +24,7 @@
       "name": "Custom USD Coin",
       "symbol": "cUSDC",
       "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/logos/cusdc.png"
+      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/refs/heads/main/tokenlist/logos/cusdc.png"
     }
   ]
 }
