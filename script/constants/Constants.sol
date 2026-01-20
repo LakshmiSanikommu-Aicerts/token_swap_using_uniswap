@@ -5,12 +5,10 @@ library Constants {
     // ===== Uniswap V3 (Sepolia) =====
 
     /// @dev Uniswap V3 NonfungiblePositionManager (Sepolia)
-    address internal constant POSITION_MANAGER =
-        0x1238536071E1c677A632429e3655c799b22cDA52;
+    address internal constant POSITION_MANAGER = 0x1238536071E1c677A632429e3655c799b22cDA52;
 
     /// @dev WETH on Sepolia
-    address internal constant WETH =
-        0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14;
+    address internal constant WETH = 0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14;
 
     /// @dev Standard volatile pair fee (0.30%)
     uint24 internal constant FEE_3000 = 3000;
@@ -20,19 +18,16 @@ library Constants {
     int24 internal constant MIN_TICK = -887220;
     int24 internal constant MAX_TICK = 887220;
 
-
     // ===== Certs365 =====
 
     /// @dev Initial supply of Certs365 (5,000,000 CERTs)
     uint256 internal constant CERTS365_INITIAL_SUPPLY = 5_000_000 ether;
-
 
     // ===== Liquidity params =====
     // 10% of total supply → 500,000 CERTs
     uint256 internal constant CERTS_LP_AMOUNT = 500_000 ether;
     // $25,000 USDC (6 decimals) → initial price = $0.10
     uint256 internal constant USDC_LP_AMOUNT = 50_000 * 1e6;
-
 
     // ===== Price config =====
 
@@ -42,6 +37,5 @@ library Constants {
 
     // Token decimals
     uint8 internal constant CERTS_DECIMALS = 18;
-    uint8 internal constant USDC_DECIMALS  = 6;
-    
+    uint8 internal constant USDC_DECIMALS = 6;
 }

@@ -1,14 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Usdc is ERC20, Ownable {
-    constructor()
-        ERC20("Certs USD Coin", "cUSDC")
-        Ownable(msg.sender)
-    {}
+    constructor() ERC20("Certs USD Coin", "cUSDC") Ownable(msg.sender) {}
 
     function decimals() public pure override returns (uint8) {
         return 6;
