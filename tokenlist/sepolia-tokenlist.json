@@ -1,0 +1,30 @@
+{
+  "name": "CERTS Demo Token List",
+  "timestamp": "2026-01-20T00:00:00.000Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/logos/list-logo.png",
+  "keywords": ["sepolia", "demo", "certs"],
+  "tokens": [
+    {
+      "chainId": 11155111,
+      "address": "0x96D35Fcbc0A329b73df77F2A5d18e7B3e6e332A6",
+      "name": "CERTS",
+      "symbol": "CERTS",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/logos/certs.png"
+    },
+    {
+      "chainId": 11155111,
+      "address": "0x3828641Db3592aF92c7d7B5E38D8C19F90A7f76b",
+      "name": "Custom USD Coin",
+      "symbol": "cUSDC",
+      "decimals": 6,
+      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/logos/cusdc.png"
+    }
+  ]
+}

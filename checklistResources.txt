@@ -22,3 +22,26 @@
 
 -> If we have have deployed with the documnet values and with full range ( 0 to infinity )
     1 cert = 0.099699 usd
+
+------------------------------------------------ Custom Range ------------------------------------------
+Token: CERTS
+Quote: USDT
+Initial price: $0.10 per CERT
+Liquidity provided:
+500,000 CERTS
+50,000 USDT
+Price range: $0.05 → $0.15
+
+
+| Price  | In Range? | CERTS Held | USDT Held | Position Value |
+| ------ | --------- | ---------- | --------- | -------------- |
+| $0.10  | ✅ Yes     | ~500k      | ~50k      | $100,000       |
+| $0.08  | ✅ Yes     | Mixed      | Mixed     | ~$90k          |
+| $0.05  | ⚠️ Edge   | ~500k      | ~0        | $25,000        |
+| $0.04  | ❌ No      | 500k       | 0         | $20,000        |
+| $0.016 | ❌ No      | 500k       | 0         | $8,000         |
+| $0.15  | ⚠️ Edge   | ~0         | ~75k      | $75,000        |
+| $0.20  | ❌ No      | 0          | ~75k      | $75,000        |
+
+
+------------------------------------------------------------------------------------------------------------
