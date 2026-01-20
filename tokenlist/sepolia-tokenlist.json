@@ -1,30 +1,43 @@
 {
-  "name": "CERTS Demo Token List",
-  "timestamp": "2026-01-20T00:00:00.000Z",
-  "version": {
-    "major": 1,
-    "minor": 0,
-    "patch": 0
-  },
-  "tags": {},
-  "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/refs/heads/main/tokenlist/logos/list-logo.png",
-  "keywords": ["sepolia", "demo", "certs"],
   "tokens": [
     {
+      "tokenId": "11155111_0x96D35Fcbc0A329b73df77F2A5d18e7B3e6e332A6",
       "chainId": 11155111,
       "address": "0x96D35Fcbc0A329b73df77F2A5d18e7B3e6e332A6",
-      "name": "CERTS",
-      "symbol": "CERTS",
       "decimals": 18,
-      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/refs/heads/main/tokenlist/logos/certs.png"
+      "symbol": "CERTS",
+      "name": "CERTS",
+      "standard": "ERC20",
+      "projectName": "CERTS",
+      "logoUrl": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/tokenlist/logos/certs.png",
+      "isSpam": "FALSE",
+      "safetyLevel": "VERIFIED"
     },
     {
+      "tokenId": "11155111_0x3828641Db3592aF92c7d7B5E38D8C19F90A7f76b",
       "chainId": 11155111,
       "address": "0x3828641Db3592aF92c7d7B5E38D8C19F90A7f76b",
-      "name": "Custom USD Coin",
-      "symbol": "cUSDC",
       "decimals": 6,
-      "logoURI": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/refs/heads/main/tokenlist/logos/cusdc.png"
+      "symbol": "cUSDC",
+      "name": "Custom USD Coin",
+      "standard": "ERC20",
+      "projectName": "Custom USD Coin",
+      "logoUrl": "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/tokenlist/logos/cusdc.png",
+      "isSpam": "FALSE",
+      "safetyLevel": "VERIFIED"
+    },
+    {
+      "tokenId": "11155111_0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
+      "chainId": 11155111,
+      "address": "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
+      "decimals": 18,
+      "symbol": "WETH",
+      "name": "Wrapped Ether",
+      "standard": "ERC20",
+      "projectName": "Wrapped Ether",
+      "logoUrl": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+      "isSpam": "FALSE",
+      "safetyLevel": "VERIFIED"
     }
   ]
 }

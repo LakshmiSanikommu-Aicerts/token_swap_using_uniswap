@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {Certs365} from "../src/Certs365.sol";
+import {CertsDemo} from "../src/CertsDemo.sol";
 import {IUniswapV2Router02} from "../src/interfaces/IUniswapV2Router.sol";
 import {IERC20} from "../src/interfaces/IERC20.sol";
 
@@ -13,8 +13,8 @@ contract DeployUSDT is Script {
     function run() external {
         vm.startBroadcast();
 
-        // Deploy Certs365
-        Certs365 token = new Certs365(1_000_000 ether);
+        // Deploy CertsDemo
+        CertsDemo token = new CertsDemo(1_000_000 ether);
 
         // Approve router to pull C365
         token.approve(ROUTER, type(uint256).max);
@@ -35,7 +35,7 @@ contract DeployUSDT is Script {
                 block.timestamp + 300
             );
 
-        console2.log("Certs365:", address(token));
+        console2.log("CertsDemo:", address(token));
         console2.log("USDT pool created");
 
         vm.stopBroadcast();

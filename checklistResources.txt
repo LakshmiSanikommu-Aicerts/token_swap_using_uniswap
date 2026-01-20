@@ -23,6 +23,8 @@
 -> If we have have deployed with the documnet values and with full range ( 0 to infinity )
     1 cert = 0.099699 usd
 
+-> token list url - https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/tokenlist/sepolia-tokenlist.json
+
 ------------------------------------------------ Custom Range ------------------------------------------
 Token: CERTS
 Quote: USDT

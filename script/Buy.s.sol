@@ -7,7 +7,7 @@ import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
 
 contract Buy is Script {
     address constant ROUTER = 0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3;
-    address C365 = DevOpsTools.get_most_recent_deployment("Certs365", block.chainid);
+    address C365 = DevOpsTools.get_most_recent_deployment("CertsDemo", block.chainid);
 
     function run() external {
         vm.startBroadcast();

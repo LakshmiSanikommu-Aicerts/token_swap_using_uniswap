@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {CertsDemo} from "../src/CertsDemo.sol";
+import {Certs365} from "../src/Certs365.sol";
 import {Usdc} from "../src/Usdc.sol";
 import {INonfungiblePositionManager} from "../src/interfaces/INonfungiblePositionManager.sol";
 import {Constants} from "./constants/Constants.sol";
@@ -13,7 +13,7 @@ contract DeployV3 is Script {
         vm.startBroadcast();
 
         // 1️⃣ Deploy CERTS token
-        CertsDemo certs = new CertsDemo(Constants.CERTSDEMO_INITIAL_SUPPLY);
+        Certs365 certs = new Certs365(Constants.CERTS365_INITIAL_SUPPLY);
 
         // 2️⃣ Deploy custom USDC
         Usdc usdc = new Usdc();
@@ -22,14 +22,14 @@ contract DeployV3 is Script {
         usdc.mint(msg.sender, Constants.USDC_LP_AMOUNT * 100);
 
         // 4️⃣ Approvals
-        certs.approve(Constants.POSITION_MANAGER, type(uint256).max);
-        usdc.approve(Constants.POSITION_MANAGER, type(uint256).max);
+        certs.approve(Constants.POSITION_MANAGER_PANCAKE, type(uint256).max);
+        usdc.approve(Constants.POSITION_MANAGER_PANCAKE, type(uint256).max);
 
         // 5️⃣ Token ordering (required by V3)
         (address token0, address token1) =
             address(certs) < address(usdc) ? (address(certs), address(usdc)) : (address(usdc), address(certs));
 
-        INonfungiblePositionManager pm = INonfungiblePositionManager(Constants.POSITION_MANAGER);
+        INonfungiblePositionManager pm = INonfungiblePositionManager(Constants.POSITION_MANAGER_PANCAKE);
 
         // 6️⃣ Initialize pool at $0.10 per CERTS
         // sqrtPriceX96 = sqrt( (amount1 / amount0) ) * 2^96
