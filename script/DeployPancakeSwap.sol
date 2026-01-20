@@ -2,7 +2,7 @@
 pragma solidity ^0.8.20;
 
 import {Script, console2} from "forge-std/Script.sol";
-import {Certs365} from "../src/Certs365.sol";
+import {CertsDemo} from "../src/CertsDemo.sol";
 import {Usdc} from "../src/Usdc.sol";
 import {INonfungiblePositionManager} from "../src/interfaces/INonfungiblePositionManager.sol";
 import {Constants} from "./constants/Constants.sol";
@@ -13,7 +13,7 @@ contract DeployV3 is Script {
         vm.startBroadcast();
 
         // 1️⃣ Deploy CERTS token
-        Certs365 certs = new Certs365(Constants.CERTS365_INITIAL_SUPPLY);
+        CertsDemo certs = new CertsDemo(Constants.CERTSDEMO_INITIAL_SUPPLY);
 
         // 2️⃣ Deploy custom USDC
         Usdc usdc = new Usdc();
@@ -39,15 +39,15 @@ contract DeployV3 is Script {
         );
         // uint160 sqrtPriceX96 = 250541448375047931186413801569; // precomputed for 0.10
 
-        pm.createAndInitializePoolIfNecessary(token0, token1, Constants.FEE_3000, sqrtPriceX96);
+        pm.createAndInitializePoolIfNecessary(token0, token1, Constants.PANCAKE_SWAP_FEE_2500, sqrtPriceX96);
 
         // 7️⃣ Mint full-range liquidity
         INonfungiblePositionManager.MintParams memory params = INonfungiblePositionManager.MintParams({
             token0: token0,
             token1: token1,
-            fee: Constants.FEE_3000,
-            tickLower: Constants.MIN_TICK,
-            tickUpper: Constants.MAX_TICK,
+            fee: Constants.PANCAKE_SWAP_FEE_2500,
+            tickLower: Constants.PANCAKE_SWAP_MIN_TICK,
+            tickUpper: Constants.PANCAKE_SWAP_MAX_TICK,
             amount0Desired: address(certs) == token0 ? Constants.CERTS_LP_AMOUNT : Constants.USDC_LP_AMOUNT,
             amount1Desired: address(certs) == token1 ? Constants.CERTS_LP_AMOUNT : Constants.USDC_LP_AMOUNT,
             amount0Min: 0,

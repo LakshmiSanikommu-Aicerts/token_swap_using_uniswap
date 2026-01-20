@@ -13,10 +13,15 @@
 
 -> multisig wallet - https://app.safe.global/welcome/accounts
 
--> Example deployed test net addresses 
+-> Example deployed test net addresses ( Uniswap )
   CERTS token: 0x96D35Fcbc0A329b73df77F2A5d18e7B3e6e332A6
   Usdc token: 0x3828641Db3592aF92c7d7B5E38D8C19F90A7f76b
   LP NFT tokenId: 223089
+
+-> PancakeSwap
+  CERTS token: 0xA944a63ab639eF6eC128dd8E28cbFC07aC5F1395
+  Usdc token: 0x38e100b43C3383200Db76A335cAAF81c4B18F1Ca
+  LP NFT tokenId: 392
 
 -> Pool Info - https://app.uniswap.org/explore/pools/ethereum_sepolia/0x62496c42752edFC6948Fe693b70FABE5cD79810F
 

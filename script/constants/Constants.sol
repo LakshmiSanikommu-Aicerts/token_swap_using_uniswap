@@ -12,11 +12,14 @@ library Constants {
 
     /// @dev Standard volatile pair fee (0.30%)
     uint24 internal constant FEE_3000 = 3000;
+    uint24 internal constant PANCAKE_SWAP_FEE_2500 = 2500;
 
     // TODO : need to modify these values later ( current range was from 0 to infinity )
     /// @dev Full range ticks (safe default)
     int24 internal constant MIN_TICK = -887220;
     int24 internal constant MAX_TICK = 887220;
+    int24 internal constant PANCAKE_SWAP_MIN_TICK = -60000;
+    int24 internal constant PANCAKE_SWAP_MAX_TICK = 60000;
 
     // ===== CertsDemo =====
 

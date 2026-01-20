@@ -5,7 +5,7 @@ NETWORK_RPC := $(SEPOLIA_RPC)
 SCRIPT := script/DeployV3.s.sol
 BUY_SCRIPT := script/Buy.s.sol
 SELL_SCRIPT := script/Sell.s.sol
-SCRIPT_PANCAKE := script/DeployPancakeSwap.s
+SCRIPT_PANCAKE := script/DeployPancakeSwap.sol
 
 deploy:
 	forge script $(SCRIPT) \
