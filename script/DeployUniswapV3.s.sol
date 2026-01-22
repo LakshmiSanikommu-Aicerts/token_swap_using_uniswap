@@ -39,29 +39,29 @@ contract DeployV3 is Script {
         );
         // uint160 sqrtPriceX96 = 250541448375047931186413801569; // precomputed for 0.10
 
-        pm.createAndInitializePoolIfNecessary(token0, token1, Constants.FEE_3000, sqrtPriceX96);
+        // pm.createAndInitializePoolIfNecessary(token0, token1, Constants.FEE_3000, sqrtPriceX96);
 
-        // 7️⃣ Mint full-range liquidity
-        INonfungiblePositionManager.MintParams memory params = INonfungiblePositionManager.MintParams({
-            token0: token0,
-            token1: token1,
-            fee: Constants.FEE_3000,
-            tickLower: Constants.MIN_TICK,
-            tickUpper: Constants.MAX_TICK,
-            amount0Desired: address(certs) == token0 ? Constants.CERTS_LP_AMOUNT : Constants.USDC_LP_AMOUNT,
-            amount1Desired: address(certs) == token1 ? Constants.CERTS_LP_AMOUNT : Constants.USDC_LP_AMOUNT,
-            amount0Min: 0,
-            amount1Min: 0,
-            recipient: msg.sender,
-            deadline: block.timestamp + 300
-        });
+        // // 7️⃣ Mint full-range liquidity
+        // INonfungiblePositionManager.MintParams memory params = INonfungiblePositionManager.MintParams({
+        //     token0: token0,
+        //     token1: token1,
+        //     fee: Constants.FEE_3000,
+        //     tickLower: Constants.MIN_TICK,
+        //     tickUpper: Constants.MAX_TICK,
+        //     amount0Desired: address(certs) == token0 ? Constants.CERTS_LP_AMOUNT : Constants.USDC_LP_AMOUNT,
+        //     amount1Desired: address(certs) == token1 ? Constants.CERTS_LP_AMOUNT : Constants.USDC_LP_AMOUNT,
+        //     amount0Min: 0,
+        //     amount1Min: 0,
+        //     recipient: msg.sender,
+        //     deadline: block.timestamp + 300
+        // });
 
-        (uint256 tokenId,,,) = pm.mint(params);
+        // (uint256 tokenId,,,) = pm.mint(params);
 
         vm.stopBroadcast();
 
         console2.log("CERTS token:", address(certs));
         console2.log("Usdc token:", address(usdc));
-        console2.log("LP NFT tokenId:", tokenId);
+        // console2.log("LP NFT tokenId:", tokenId);
     }
 }

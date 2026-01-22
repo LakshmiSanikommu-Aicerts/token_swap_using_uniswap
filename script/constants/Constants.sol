@@ -2,10 +2,18 @@
 pragma solidity ^0.8.20;
 
 library Constants {
+
+    // ==== Uniswap V2 (Sepolia) =====
+
+    /// @dev Uniswap V2 Router (Sepolia)
+    address internal constant ROUTER_UNISWAP_V2 = 0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3;
+
+
     // ===== Uniswap V3 (Sepolia) =====
 
     /// @dev Uniswap V3 NonfungiblePositionManager (Sepolia)
     address internal constant POSITION_MANAGER = 0x1238536071E1c677A632429e3655c799b22cDA52;
+    address internal constant POSITION_MANAGER_LIVE = 0xC36442b4a4522E871399CD717aBDD847Ab11FE88
 
     /// @dev pancakeswap V3 NonfungiblePositionManager (Sepolia)
     address internal constant POSITION_MANAGER_PANCAKE = 0x46A15B0b27311cedF172AB29E4f4766fbE7F4364;

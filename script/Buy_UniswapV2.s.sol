@@ -5,22 +5,22 @@ import {Script, console2} from "forge-std/Script.sol";
 import {IUniswapV2Router02} from "../src/interfaces/IUniswapV2Router.sol";
 import {IERC20} from "../src/interfaces/IERC20.sol";
 import {DevOpsTools} from "lib/foundry-devops/src/DevOpsTools.sol";
+import { Constants } from "./constants/Constants.sol";
 
 contract BuyUSDT is Script {
-    address constant ROUTER = 0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3;
-    address constant USDT = 0x7169D38820dfd117C3FA1f22a697dBA58d90BA06;
-    address constant C365 = 0x855892cFC4FeDEDc032aD9DCc22928FbBa8BDc2a;
+    address USDT = DevOpsTools.get_most_recent_deployment("Usdc", block.chainid);
+    address C365 = DevOpsTools.get_most_recent_deployment("CertsDemo", block.chainid);
 
     function run() external {
         vm.startBroadcast();
 
-        IERC20(USDT).approve(ROUTER, type(uint256).max);
+        IERC20(USDT).approve(Constants.ROUTER_UNISWAP_V2, type(uint256).max);
 
         address[] memory path = new address[](2);
         path[0] = USDT;
         path[1] = C365;
 
-        IUniswapV2Router02(ROUTER)
+        IUniswapV2Router02(Constants.ROUTER_UNISWAP_V2)
             .swapExactTokensForTokens(
                 100 * 1e6, // 100 USDT
                 0,

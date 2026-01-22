@@ -1,0 +1,35 @@
+------------------------------------------- Metamask ---------------------------------------
+
+const tokenAddress = "0x96D35Fcbc0A329b73df77F2A5d18e7B3e6e332A6"
+const tokenSymbol = "CERTS"
+const tokenDecimals = 18
+const tokenImage = "https://raw.githubusercontent.com/LakshmiSanikommu-Aicerts/token_swap_using_uniswap/main/tokenlist/logos/certs.png"
+
+try {
+  // 'wasAdded' is a boolean. Like any RPC method, an error can be thrown.
+  const wasAdded = await window.ethereum // Or window.ethereum if you don't support EIP-6963.
+    .request({
+      method: "wallet_watchAsset",
+      params: {
+        type: "ERC20",
+        options: {
+          // The address of the token.
+          address: tokenAddress,
+          // A ticker symbol or shorthand, up to 5 characters.
+          symbol: tokenSymbol,
+          // The number of decimals in the token.
+          decimals: tokenDecimals,
+          // A string URL of the token logo.
+          image: tokenImage,
+        },
+      },
+    })
+
+  if (wasAdded) {
+    console.log("Thanks for your interest!")
+  } else {
+    console.log("Your loss!")
+  }
+} catch (error) {
+  console.log(error)
+}

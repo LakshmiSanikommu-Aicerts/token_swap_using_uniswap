@@ -7,8 +7,8 @@ BUY_SCRIPT := script/Buy.s.sol
 SELL_SCRIPT := script/Sell.s.sol
 SCRIPT_PANCAKE := script/DeployPancakeSwap.sol
 
-deploy:
-	forge script $(SCRIPT) \
+deploy-uniswapv3:
+	forge script script/DeployUniswapV3.s.sol \
 		--rpc-url $(NETWORK_RPC) \
 		--broadcast \
 		--verify \

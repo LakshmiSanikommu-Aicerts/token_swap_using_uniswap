@@ -1,0 +1,1 @@
+-> when i was doing swap using safe wallet , i did approve , sign and swap ( initially i did three transactions , but now i did only one transaction (approve and swap) , so it's working fine now.)
